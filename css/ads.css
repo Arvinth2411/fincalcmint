@@ -1,0 +1,378 @@
+/* ============================================
+   AD UNIT CONTAINERS
+   Google AdSense placements — replace data-ad-client
+   and data-ad-slot values with your own after approval.
+   ============================================ */
+
+/* ---- SHARED AD WRAPPER ---- */
+.ad-unit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-card);
+  border: 1px dashed var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  transition: border-color var(--transition-base);
+}
+
+.ad-unit::before {
+  content: 'Advertisement';
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  pointer-events: none;
+  z-index: 1;
+  font-weight: 500;
+}
+
+/* Ensure AdSense ins tags fill container */
+.ad-unit ins.adsbygoogle {
+  display: block !important;
+  width: 100% !important;
+}
+
+/* ============================================
+   1. TOP LEADERBOARD — below topbar, above calculator
+      Best for: high viewability, first impression
+      Size: 728x90 desktop | responsive mobile
+      Expected CPM: ₹50–150
+   ============================================ */
+.ad-leaderboard {
+  width: 100%;
+  min-height: 90px;
+  margin: var(--space-6) 0 var(--space-4);
+  padding-top: 16px; /* room for 'Advertisement' label */
+}
+
+@media (max-width: 767px) {
+  .ad-leaderboard { min-height: 60px; }
+}
+
+/* ============================================
+   2. STICKY SIDEBAR AD — right rail, follows scroll
+      Best for: passive views, long sessions
+      Size: 300x600 or 300x250 (auto-collapse)
+      Expected CPM: ₹80–200 (highest CPM size)
+   ============================================ */
+.ad-sidebar-sticky {
+  position: sticky;
+  top: calc(var(--topbar-height) + var(--space-4));
+  width: 300px;
+  min-height: 250px;
+  padding-top: 16px;
+  margin-left: var(--space-4);
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+@media (max-width: 1279px) {
+  .ad-sidebar-sticky { display: none; }
+}
+
+/* ============================================
+   3. IN-RESULTS AD — shown after user calculates
+      Best for: high intent moment, peak attention
+      Size: 336x280 (large rectangle)
+      Expected CPM: ₹60–180
+   ============================================ */
+.ad-in-results {
+  min-height: 280px;
+  width: 100%;
+  padding-top: 16px;
+  margin: var(--space-4) 0;
+}
+
+@media (max-width: 479px) {
+  .ad-in-results { min-height: 250px; }
+}
+
+/* ============================================
+   4. MID-CONTENT AD — between calculator and FAQ
+      Best for: users who scroll to read more
+      Size: 300x250 responsive
+      Expected CPM: ₹40–100
+   ============================================ */
+.ad-mid-content {
+  min-height: 250px;
+  max-width: 728px;
+  margin: var(--space-8) auto;
+  padding-top: 16px;
+}
+
+/* ============================================
+   5. IN-CONTENT / NATIVE — inside FAQ or How-it-Works
+      Best for: blending with content, high CTR
+      Size: responsive / auto
+      Expected CPM: ₹30–90
+   ============================================ */
+.ad-in-content {
+  min-height: 200px;
+  width: 100%;
+  padding-top: 16px;
+  margin: var(--space-6) 0;
+}
+
+/* ============================================
+   6. BELOW FOLD — above footer, end of page
+      Best for: users who read entire page
+      Size: 728x90 / responsive
+      Expected CPM: ₹25–70
+   ============================================ */
+.ad-below-fold {
+  min-height: 90px;
+  width: 100%;
+  padding-top: 16px;
+  margin: var(--space-6) 0 var(--space-4);
+}
+
+/* ============================================
+   7. MOBILE ANCHOR / STICKY BOTTOM
+      Best for: mobile revenue, always visible
+      Size: 320x50
+      Expected CPM: ₹20–60
+   ============================================ */
+.ad-mobile-anchor {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-color);
+  z-index: var(--z-overlay);
+  padding-top: 10px;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 767px) {
+  .ad-mobile-anchor { display: flex; }
+  /* Add bottom padding so anchor doesn't cover content */
+  .main-content { padding-bottom: 70px; }
+  .footer { margin-bottom: 60px; }
+}
+
+/* ============================================
+   LAYOUT HELPER: Side-by-side calculator + sidebar ad
+   ============================================ */
+.calculator-with-sidebar {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.calculator-main-col {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ============================================
+   PAGE WRAPPER WITH RIGHT RAIL
+   ============================================ */
+.page-with-rail {
+  display: flex;
+  gap: var(--space-6);
+  align-items: flex-start;
+}
+
+.page-main-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.page-right-rail {
+  width: 300px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 1279px) {
+  .page-right-rail { display: none; }
+}
+
+/* ============================================
+   SEO CONTENT SECTIONS
+   ============================================ */
+.seo-section {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: var(--space-8);
+  margin-top: var(--space-8);
+}
+
+.seo-section h2 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-5);
+  color: var(--text-primary);
+}
+
+.seo-section h3 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.seo-section p {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-4);
+}
+
+.seo-section ul {
+  list-style: disc;
+  padding-left: var(--space-6);
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  line-height: 2;
+}
+
+/* FAQ */
+.faq-list { display: flex; flex-direction: column; gap: var(--space-3); }
+
+.faq-item {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+  background: var(--bg-input);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  transition: background var(--transition-fast);
+}
+
+.faq-question:hover { background: var(--bg-card-hover); }
+
+.faq-question::after {
+  content: '▾';
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-question::after {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  padding: 0 var(--space-5);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 600px;
+  padding: var(--space-4) var(--space-5);
+}
+
+/* Related calculators */
+.related-calcs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}
+
+.related-calc-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--bg-body);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+.related-calc-link:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+  flex-wrap: wrap;
+}
+
+.breadcrumb a { color: var(--color-primary); text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+.breadcrumb-sep { color: var(--text-muted); }
+
+/* How it works steps */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.step-card {
+  text-align: center;
+  padding: var(--space-5);
+  background: var(--bg-body);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border-color);
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-bold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-3);
+}
+
+.step-card h4 {
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-1);
+}
+
+.step-card p {
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  margin: 0;
+}

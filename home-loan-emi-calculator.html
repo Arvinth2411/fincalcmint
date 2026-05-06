@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home Loan EMI Calculator India | Housing Loan Calculator | FinCalc Mint</title>
+  <meta name="description" content="Free Home Loan EMI Calculator India. Calculate monthly EMI, total interest & amortization schedule for housing loans. Accurate reducing-balance formula used by SBI, HDFC, ICICI.">
+  <meta name="keywords" content="home loan emi calculator, housing loan calculator india, emi calculator for home loan, home loan interest calculator, sbi home loan emi calculator, hdfc home loan calculator, home loan india">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fincalcmint.com/home-loan-emi-calculator.html">
+  <meta property="og:title" content="Home Loan EMI Calculator India | FinCalc Mint">
+  <meta property="og:description" content="Calculate your home loan EMI instantly. Get monthly payment, total interest, and full amortization schedule.">
+  <meta property="og:url" content="https://fincalcmint.com/home-loan-emi-calculator.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Home Loan EMI Calculator",
+    "url": "https://fincalcmint.com/home-loan-emi-calculator.html",
+    "description": "Free online home loan EMI calculator for India. Calculate monthly EMI, total interest payable and amortization schedule.",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "INR" }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type":"Question","name":"How is home loan EMI calculated in India?","acceptedAnswer":{"@type":"Answer","text":"Home loan EMI is calculated using the formula: EMI = P × r × (1+r)^n / ((1+r)^n - 1), where P is principal, r is monthly interest rate (annual rate ÷ 12 ÷ 100), and n is tenure in months."}},
+      {"@type":"Question","name":"What is the EMI for ₹50 lakh home loan?","acceptedAnswer":{"@type":"Answer","text":"For a ₹50 lakh home loan at 8.5% interest for 20 years, the monthly EMI would be approximately ₹43,391. The total interest paid would be about ₹54.14 lakh."}},
+      {"@type":"Question","name":"What is the maximum tenure for a home loan in India?","acceptedAnswer":{"@type":"Answer","text":"Most Indian banks offer home loans for a maximum tenure of 30 years. However, the loan must typically be repaid before the borrower turns 70-75 years of age."}}
+    ]
+  }
+  </script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/ads.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-theme="light">
+<div class="app-shell">
+  <div id="sidebar-overlay" class="sidebar-overlay" style="display:none;"></div>
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <button id="hamburger" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="logo"><div class="logo-icon">💹</div><span class="logo-text">Fin<span>Calc</span> Mint</span></a>
+    </div>
+    <div class="top-bar-right">
+      <button id="theme-toggle" class="theme-toggle" style="position:relative;" aria-label="Toggle theme"><span class="icon-moon">🌙</span><span class="icon-sun">☀️</span></button>
+    </div>
+  </header>
+  <nav id="sidebar" class="sidebar"><div class="sidebar-label">All Calculators</div><ul id="sidebar-nav" class="nav-links"></ul></nav>
+  <div id="scroll-progress" class="scroll-progress"></div>
+
+  <main class="main-content">
+    <div class="content-inner">
+      <!-- BREADCRUMB -->
+      <nav class="breadcrumb" aria-label="breadcrumb" style="margin-top:var(--space-5);">
+        <a href="index.html">🏠 Home</a><span class="breadcrumb-sep">›</span>
+        <span>Home Loan EMI Calculator</span>
+      </nav>
+
+      <!-- TOP LEADERBOARD AD -->
+      <div class="ad-unit ad-leaderboard">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins>
+      </div>
+
+      <div class="page-with-rail">
+        <div class="page-main-content">
+
+          <!-- CALCULATOR -->
+          <section class="calculator-section" style="padding-top:var(--space-6);">
+            <div class="section-header reveal">
+              <div class="section-icon-wrap" style="background:rgba(99,102,241,0.1);">🏦</div>
+              <div>
+                <h1 class="section-title">Home Loan <span class="gradient-text">EMI Calculator</span></h1>
+                <p class="section-subtitle">Calculate monthly EMI, total interest &amp; full amortization schedule for your housing loan.</p>
+              </div>
+            </div>
+            <div class="calc-body reveal">
+              <div class="calculator-card">
+                <div class="calc-inputs">
+                  <div class="input-group">
+                    <label class="input-label">Loan Amount <span class="input-label-hint">₹1L – ₹10Cr</span></label>
+                    <div class="input-row"><input type="number" id="hl-principal" value="5000000" min="100000" max="100000000" step="50000"><span class="input-unit">₹</span></div>
+                    <div class="slider-wrap"><input type="range" id="hl-principal-slider" min="100000" max="100000000" step="50000" value="5000000"></div>
+                    <div class="slider-labels"><span>₹1L</span><span>₹10Cr</span></div>
+                  </div>
+                  <div class="input-group">
+                    <label class="input-label">Annual Interest Rate <span class="input-label-hint">5% – 20%</span></label>
+                    <div class="input-row"><input type="number" id="hl-rate" value="8.5" min="5" max="20" step="0.1"><span class="input-unit">%</span></div>
+                    <div class="slider-wrap"><input type="range" id="hl-rate-slider" min="5" max="20" step="0.1" value="8.5"></div>
+                    <div class="slider-labels"><span>5%</span><span>20%</span></div>
+                  </div>
+                  <div class="input-group">
+                    <label class="input-label">Loan Tenure <span class="input-label-hint">1 – 30 years</span></label>
+                    <div class="input-row"><input type="number" id="hl-tenure" value="20" min="1" max="30" step="1"><span class="input-unit">Yrs</span></div>
+                    <div class="slider-wrap"><input type="range" id="hl-tenure-slider" min="1" max="30" step="1" value="20"></div>
+                    <div class="slider-labels"><span>1 Yr</span><span>30 Yrs</span></div>
+                  </div>
+                  <button id="hl-calculate" class="btn btn-calculate">Calculate EMI</button>
+                </div>
+              </div>
+              <div id="hl-results" class="calculator-card hidden">
+                <div class="calc-results">
+                  <div class="result-cards">
+                    <div class="result-card primary" style="--card-accent:var(--calc-home-loan);">
+                      <div class="result-label">Monthly EMI</div>
+                      <div id="hl-emi" class="result-value large">₹0</div>
+                      <div style="font-size:var(--font-size-xs);color:rgba(255,255,255,0.7);margin-top:4px;" id="hl-tenure-display"></div>
+                    </div>
+                    <div class="result-card" style="--card-accent:#818cf8;"><div class="result-label">Principal</div><div id="hl-principal-val" class="result-value">₹0</div></div>
+                    <div class="result-card" style="--card-accent:#c7d2fe;"><div class="result-label">Total Interest</div><div id="hl-interest" class="result-value">₹0</div></div>
+                    <div class="result-card" style="--card-accent:var(--calc-home-loan);"><div class="result-label">Total Payment</div><div id="hl-total" class="result-value">₹0</div></div>
+                  </div>
+                  <div><div class="chart-title">Payment Breakdown</div><div class="chart-container" style="max-width:280px;margin:0 auto;"><canvas id="hl-chart"></canvas></div></div>
+
+                  <!-- IN-RESULTS AD — highest CTR placement -->
+                  <div class="ad-unit ad-in-results">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins>
+                  </div>
+
+                  <div class="amortization-section">
+                    <div class="amortization-title">
+                      Amortization Schedule
+                      <div style="display:flex;gap:8px;">
+                        <button id="hl-mode-monthly" class="btn btn-xs btn-secondary active" data-mode="monthly">Monthly</button>
+                        <button id="hl-mode-yearly" class="btn btn-xs btn-secondary" data-mode="yearly">Yearly</button>
+                      </div>
+                    </div>
+                    <div class="table-wrapper"><div id="hl-amortization-wrapper"></div></div>
+                    <button id="hl-show-all" class="btn btn-secondary btn-sm" style="margin-top:var(--space-3);width:100%;">View Full Schedule</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- MID-CONTENT AD -->
+          <div class="ad-unit ad-mid-content">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins>
+          </div>
+
+          <!-- HOW IT WORKS -->
+          <section class="seo-section reveal">
+            <h2>How to Use the Home Loan EMI Calculator</h2>
+            <div class="steps-grid">
+              <div class="step-card"><div class="step-number">1</div><h4>Enter Loan Amount</h4><p>Input the total home loan amount you need (₹1 lakh to ₹10 crore)</p></div>
+              <div class="step-card"><div class="step-number">2</div><h4>Set Interest Rate</h4><p>Enter the annual rate offered by your bank (SBI: 8.5%, HDFC: 8.75%, etc.)</p></div>
+              <div class="step-card"><div class="step-number">3</div><h4>Choose Tenure</h4><p>Select repayment period from 1 to 30 years</p></div>
+              <div class="step-card"><div class="step-number">4</div><h4>View Results</h4><p>Get instant EMI, total interest, and month-by-month breakdown</p></div>
+            </div>
+            <h3 style="margin-top:var(--space-6);">Home Loan EMI Formula</h3>
+            <p>Indian banks use the <strong>reducing-balance (flat rate) method</strong>. The standard formula is:</p>
+            <div style="background:var(--bg-body);padding:var(--space-4);border-radius:var(--radius-lg);border:1px solid var(--border-color);font-family:monospace;font-size:var(--font-size-sm);color:var(--text-primary);margin:var(--space-3) 0;">
+              EMI = P × r × (1+r)^n ÷ [(1+r)^n − 1]<br>
+              <span style="color:var(--text-muted);">Where: P = Principal | r = Monthly rate (annual ÷ 12 ÷ 100) | n = Months</span>
+            </div>
+            <p><strong>Example:</strong> ₹50 lakh loan at 8.5% for 20 years → Monthly EMI = <strong>₹43,391</strong>. Total interest = ₹54.14 lakh. Total payment = ₹1,04,14,000.</p>
+            <h3>Current Home Loan Interest Rates</h3>
+            <ul>
+              <li><strong>SBI Home Loan:</strong> 8.50% – 9.65% p.a.</li>
+              <li><strong>HDFC Home Loan:</strong> 8.75% – 9.90% p.a.</li>
+              <li><strong>ICICI Bank:</strong> 8.75% – 9.80% p.a.</li>
+              <li><strong>Axis Bank:</strong> 8.75% – 9.65% p.a.</li>
+              <li><strong>LIC HFL:</strong> 8.50% – 9.75% p.a.</li>
+            </ul>
+          </section>
+
+          <!-- IN-CONTENT AD -->
+          <div class="ad-unit ad-in-content">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="7777777777" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins>
+          </div>
+
+          <!-- FAQ -->
+          <section class="seo-section reveal">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-question">How is home loan EMI calculated in India?</button>
+                <div class="faq-answer">Home loan EMI is calculated using the reducing-balance formula: EMI = P × r × (1+r)^n / ((1+r)^n - 1). Here P is the principal loan amount, r is the monthly interest rate (annual rate divided by 12 and then by 100), and n is the total number of monthly instalments. This is the standard method used by all RBI-regulated banks in India.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What is the EMI for a ₹50 lakh home loan at 8.5% for 20 years?</button>
+                <div class="faq-answer">The monthly EMI for a ₹50 lakh home loan at 8.5% annual interest for 20 years is approximately ₹43,391. Over 20 years, the total interest paid would be about ₹54.14 lakh, making the total repayment amount approximately ₹1,04,14,000.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">What is the maximum home loan tenure in India?</button>
+                <div class="faq-answer">Most Indian banks offer home loans for up to 30 years. However, the maximum age at loan maturity is typically 70–75 years. So a 45-year-old borrower may only get a 25-year tenure. Longer tenure means lower EMI but higher total interest outgo.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Does prepayment reduce home loan EMI or tenure?</button>
+                <div class="faq-answer">When you make a prepayment on a floating-rate home loan, Indian banks typically reduce the tenure while keeping the EMI the same. Some banks let you choose. Reducing tenure saves more interest in the long run. Under RBI guidelines, banks cannot charge prepayment penalties on floating-rate home loans.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">How much home loan can I get on my salary?</button>
+                <div class="faq-answer">Banks typically allow an EMI of up to 40–50% of your net monthly take-home salary. So if your take-home salary is ₹80,000/month, your maximum eligible EMI is around ₹32,000–₹40,000. Use our calculator to find what loan amount gives an EMI within this range.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-question">Is home loan interest tax deductible in India?</button>
+                <div class="faq-answer">Yes, under Section 24(b) of the Income Tax Act, you can claim a deduction of up to ₹2 lakh per year on home loan interest for a self-occupied property (under the old tax regime). Under the new tax regime, most deductions including this one are not available unless you choose to opt out.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- BELOW-FOLD AD -->
+          <div class="ad-unit ad-below-fold">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="8888888888" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins>
+          </div>
+
+          <!-- RELATED CALCULATORS -->
+          <section class="seo-section reveal">
+            <h2>Related Calculators</h2>
+            <div class="related-calcs">
+              <a class="related-calc-link" href="car-loan-emi-calculator.html">🚗 Car Loan EMI Calculator</a>
+              <a class="related-calc-link" href="loan-comparison-calculator.html">⚖️ Compare Loan Offers</a>
+              <a class="related-calc-link" href="sip-calculator.html">📈 SIP Calculator</a>
+              <a class="related-calc-link" href="income-tax-calculator-india.html">🧮 Income Tax Calculator</a>
+              <a class="related-calc-link" href="salary-calculator.html">💼 Salary Calculator</a>
+              <a class="related-calc-link" href="inflation-calculator.html">📊 Inflation Calculator</a>
+            </div>
+          </section>
+
+        </div><!-- /page-main-content -->
+
+      </div><!-- /page-with-rail -->
+
+    </div>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        <nav class="footer-links">
+          <a href="index.html">🏠 Home</a>
+          <a href="about.html">About Us</a>
+          <a href="contact.html">Contact Us</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+          <a href="disclaimer.html">Disclaimer</a>
+        </nav>
+        <div class="footer-bottom">
+          <p class="footer-disclaimer">⚠️ Results are indicative estimates. Actual EMI may vary based on bank processing fees, GST on charges, and exact disbursement date. Always confirm with your lender.</p>
+          <span class="footer-copy">© FinCalc Mint · <a href="index.html">All Calculators</a></span>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <div class="ad-unit ad-mobile-anchor">
+    <ins class="adsbygoogle" style="display:inline-block;width:320px;height:50px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4444444444"></ins>
+  </div>
+</div>
+
+<script src="js/utils/formatters.js"></script>
+<script src="js/utils/dom.js"></script>
+<script src="js/charts/chartManager.js"></script>
+<script src="js/calculators/emi.js"></script>
+<script src="js/page-init.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  FinCalc.EMI.init();
+
+  // Amortization mode buttons
+  var modebtns = [document.getElementById('hl-mode-monthly'), document.getElementById('hl-mode-yearly')];
+  modebtns.forEach(function(btn) {
+    if (!btn) return;
+    btn.addEventListener('click', function() {
+      modebtns.forEach(function(b) { if(b) b.classList.remove('active'); });
+      btn.classList.add('active');
+    });
+  });
+
+  // Push non-lazy ads
+  try { (adsbygoogle = window.adsbygoogle || []).push({}); } catch(e) {}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Car Loan & Personal Loan EMI Calculator India | FinCalc Mint</title>
+  <meta name="description" content="Free Car Loan, Personal Loan & Two-Wheeler Loan EMI Calculator India. Calculate monthly EMI, total interest & repayment schedule. Compare rates from top Indian banks.">
+  <meta name="keywords" content="car loan emi calculator, personal loan emi calculator india, auto loan calculator india, two wheeler loan emi calculator, vehicle loan calculator, car loan india">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fincalcmint.com/car-loan-emi-calculator.html">
+  <meta property="og:title" content="Car Loan & Personal Loan EMI Calculator India | FinCalc Mint">
+  <meta property="og:description" content="Calculate car, personal and two-wheeler loan EMI instantly with amortization schedule.">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Car Loan EMI Calculator","url":"https://fincalcmint.com/car-loan-emi-calculator.html","description":"Free car loan and personal loan EMI calculator for India","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is the EMI for a ₹8 lakh car loan at 9.5% for 5 years?","acceptedAnswer":{"@type":"Answer","text":"The monthly EMI for a ₹8 lakh car loan at 9.5% for 5 years is approximately ₹16,764. Total interest paid would be about ₹2.06 lakh."}},{"@type":"Question","name":"What is the current car loan interest rate in India 2025?","acceptedAnswer":{"@type":"Answer","text":"Car loan interest rates in India in 2025 range from 7.5% to 13% p.a. SBI offers from 8.65%, HDFC from 8.75%, and ICICI from 9.0%."}},{"@type":"Question","name":"What is the difference between car loan and personal loan?","acceptedAnswer":{"@type":"Answer","text":"Car loans are secured loans with the vehicle as collateral, so interest rates are lower (8-12%). Personal loans are unsecured, so rates are higher (10.5-24%). Car loans require 10-25% down payment while personal loans cover 100% of the amount."}}]}</script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/ads.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-theme="light">
+<div class="app-shell">
+  <div id="sidebar-overlay" class="sidebar-overlay" style="display:none;"></div>
+  <header class="top-bar">
+    <div class="top-bar-left">
+      <button id="hamburger" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      <a href="index.html" class="logo"><div class="logo-icon">💹</div><span class="logo-text">Fin<span>Calc</span> Mint</span></a>
+    </div>
+    <div class="top-bar-right">
+      <button id="theme-toggle" class="theme-toggle" style="position:relative;" aria-label="Toggle theme"><span class="icon-moon">🌙</span><span class="icon-sun">☀️</span></button>
+    </div>
+  </header>
+  <nav id="sidebar" class="sidebar"><div class="sidebar-label">All Calculators</div><ul id="sidebar-nav" class="nav-links"></ul></nav>
+  <div id="scroll-progress" class="scroll-progress"></div>
+
+  <main class="main-content">
+    <div class="content-inner">
+      <nav class="breadcrumb" style="margin-top:var(--space-5);"><a href="index.html">🏠 Home</a><span class="breadcrumb-sep">›</span><span>Car / Personal Loan EMI Calculator</span></nav>
+      <div class="ad-unit ad-leaderboard"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+      <div class="page-with-rail">
+        <div class="page-main-content">
+          <section class="calculator-section" style="padding-top:var(--space-6);">
+            <div class="section-header reveal">
+              <div class="section-icon-wrap" style="background:rgba(6,182,212,0.1);">🚗</div>
+              <div>
+                <h1 class="section-title"><span style="background:linear-gradient(135deg,#06b6d4,#6366f1);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Car / Personal Loan</span> EMI Calculator</h1>
+                <p class="section-subtitle">Calculate monthly EMI for car loans, personal loans &amp; two-wheeler loans. Compare total interest across options.</p>
+              </div>
+            </div>
+            <div class="calc-body reveal">
+              <div class="calculator-card">
+                <div class="calc-inputs">
+                  <div class="input-group">
+                    <label class="input-label">Loan Type</label>
+                    <div class="select-wrap"><select id="cl-type" class="form-select"><option value="car">Car Loan</option><option value="personal">Personal Loan</option><option value="two-wheeler">Two-Wheeler Loan</option></select></div>
+                  </div>
+                  <div class="input-group">
+                    <label class="input-label">Loan Amount <span class="input-label-hint">Up to <span id="cl-principal-max">₹50L</span></span></label>
+                    <div class="input-row"><input type="number" id="cl-principal" value="800000" min="50000" max="5000000" step="10000"><span class="input-unit">₹</span></div>
+                    <div class="slider-wrap"><input type="range" id="cl-principal-slider" min="50000" max="5000000" step="10000" value="800000"></div>
+                    <div class="slider-labels"><span>₹50K</span><span id="cl-principal-max-lbl">₹50L</span></div>
+                  </div>
+                  <div class="input-group">
+                    <label class="input-label">Annual Interest Rate</label>
+                    <div class="input-row"><input type="number" id="cl-rate" value="9.5" min="7" max="36" step="0.1"><span class="input-unit">%</span></div>
+                    <div class="slider-wrap"><input type="range" id="cl-rate-slider" min="7" max="36" step="0.1" value="9.5"></div>
+                    <div class="slider-labels"><span>7%</span><span>36%</span></div>
+                  </div>
+                  <div class="input-group">
+                    <label class="input-label">Loan Tenure</label>
+                    <div class="input-row"><input type="number" id="cl-tenure" value="5" min="1" max="7" step="1"><span class="input-unit">Yrs</span></div>
+                    <div class="slider-wrap"><input type="range" id="cl-tenure-slider" min="1" max="7" step="1" value="5"></div>
+                    <div class="slider-labels"><span>1 Yr</span><span>7 Yrs</span></div>
+                  </div>
+                  <div class="info-box"><span class="info-box-icon">ℹ️</span><span id="cl-rate-info">Typical car loan rates: 7.5% – 12%</span></div>
+                  <button id="cl-calculate" class="btn btn-calculate" style="background:linear-gradient(135deg,#06b6d4,#6366f1);">Calculate EMI</button>
+                </div>
+              </div>
+              <div id="cl-results" class="calculator-card hidden">
+                <div class="calc-results">
+                  <div class="result-cards">
+                    <div class="result-card primary" style="background:linear-gradient(135deg,#06b6d4,#6366f1);border:none;"><div class="result-label">Monthly EMI</div><div id="cl-emi" class="result-value large">₹0</div></div>
+                    <div class="result-card" style="--card-accent:#06b6d4;"><div class="result-label">Total Interest</div><div id="cl-interest" class="result-value">₹0</div></div>
+                    <div class="result-card" style="--card-accent:#06b6d4;"><div class="result-label">Total Payment</div><div id="cl-total" class="result-value">₹0</div></div>
+                  </div>
+                  <div><div class="chart-title">Payment Breakdown</div><div class="chart-container" style="max-width:280px;margin:0 auto;"><canvas id="cl-chart"></canvas></div></div>
+                  <div class="ad-unit ad-in-results"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+                  <div class="amortization-section">
+                    <div class="amortization-title">Amortization Schedule</div>
+                    <div class="table-wrapper"><div id="cl-amortization-wrapper"></div></div>
+                    <button id="cl-show-all" class="btn btn-secondary btn-sm" style="margin-top:var(--space-3);width:100%;">View Full Schedule</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="ad-unit ad-mid-content"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+          <section class="seo-section reveal">
+            <h2>Car Loan vs Personal Loan — Which is Better?</h2>
+            <p>When financing a vehicle purchase, you typically have two options: a <strong>car loan (secured)</strong> or a <strong>personal loan (unsecured)</strong>. Here's how they compare:</p>
+            <div style="overflow-x:auto;"><table style="font-size:var(--font-size-sm);"><thead><tr><th>Feature</th><th>Car Loan</th><th>Personal Loan</th></tr></thead><tbody><tr><td>Interest Rate</td><td>8% – 13% p.a.</td><td>10.5% – 24% p.a.</td></tr><tr><td>Collateral</td><td>Vehicle (hypothecation)</td><td>None required</td></tr><tr><td>Down Payment</td><td>10–25% of vehicle cost</td><td>None (100% finance)</td></tr><tr><td>Tenure</td><td>1–7 years</td><td>1–5 years</td></tr><tr><td>Processing Time</td><td>2–5 days</td><td>1–3 days</td></tr></tbody></table></div>
+            <h3 style="margin-top:var(--space-5);">Current Car Loan Rates</h3>
+            <ul><li><strong>SBI Car Loan:</strong> 8.65% – 10.15% p.a.</li><li><strong>HDFC Car Loan:</strong> 8.75% – 11.00% p.a.</li><li><strong>ICICI Car Loan:</strong> 9.00% – 12.50% p.a.</li><li><strong>Axis Bank:</strong> 8.75% – 11.25% p.a.</li></ul>
+          </section>
+
+          <div class="ad-unit ad-in-content"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="7777777777" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+          <section class="seo-section reveal">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item"><button class="faq-question">What is the EMI for ₹8 lakh car loan at 9.5% for 5 years?</button><div class="faq-answer">The monthly EMI for a ₹8 lakh car loan at 9.5% annual interest for 5 years is approximately ₹16,764. Total interest paid will be about ₹2.06 lakh, making the total repayment about ₹10.06 lakh.</div></div>
+              <div class="faq-item"><button class="faq-question">Can I get 100% car loan financing in India?</button><div class="faq-answer">Most banks finance up to 80–90% of the on-road price of the vehicle. However, some banks offer 100% financing for customers with excellent credit scores (750+) and stable income. You'll typically need to pay 10–20% as a down payment.</div></div>
+              <div class="faq-item"><button class="faq-question">What documents are needed for a car loan?</button><div class="faq-answer">Required documents typically include: identity proof (Aadhaar, PAN), address proof, last 3 months' salary slips, 6 months' bank statements, Form 16, and the vehicle's proforma invoice. Self-employed individuals need ITR for the last 2 years.</div></div>
+              <div class="faq-item"><button class="faq-question">What is the minimum CIBIL score for a car loan?</button><div class="faq-answer">Most banks require a minimum CIBIL score of 700–720 for a car loan. A score above 750 gets the best interest rates. Some NBFCs may approve loans with scores as low as 650, but at higher interest rates.</div></div>
+              <div class="faq-item"><button class="faq-question">Is car loan interest tax deductible?</button><div class="faq-answer">Car loan interest is generally not tax-deductible for personal vehicles. However, if the vehicle is used for business purposes, you can claim the interest as a business expense under Section 37(1). Self-employed individuals and business owners can thus benefit from tax savings.</div></div>
+            </div>
+          </section>
+
+          <div class="ad-unit ad-below-fold"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="8888888888" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+          <section class="seo-section reveal">
+            <h2>Related Calculators</h2>
+            <div class="related-calcs">
+              <a class="related-calc-link" href="home-loan-emi-calculator.html">🏦 Home Loan EMI</a>
+              <a class="related-calc-link" href="loan-comparison-calculator.html">⚖️ Compare Loans</a>
+              <a class="related-calc-link" href="sip-calculator.html">📈 SIP Calculator</a>
+              <a class="related-calc-link" href="salary-calculator.html">💼 Salary Calculator</a>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"><div class="footer-inner"><nav class="footer-links"><a href="index.html">🏠 Home</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="disclaimer.html">Disclaimer</a></nav><div class="footer-bottom"><p class="footer-disclaimer">⚠️ Results are indicative. Actual EMI may vary based on bank processing fees and exact disbursement date.</p><span class="footer-copy">© FinCalc Mint · <a href="index.html">All Calculators</a></span></div></div></footer>
+  </main>
+  <div class="ad-unit ad-mobile-anchor"><ins class="adsbygoogle" style="display:inline-block;width:320px;height:50px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4444444444"></ins></div>
+</div>
+<script src="js/utils/formatters.js"></script>
+<script src="js/utils/dom.js"></script>
+<script src="js/charts/chartManager.js"></script>
+<script src="js/calculators/carloan.js"></script>
+<script src="js/page-init.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() { FinCalc.CarLoan.init(); try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){} });</script>
+</body>
+</html>

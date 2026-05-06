@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Income Tax Calculator India | New vs Old Regime | FinCalc Mint</title>
+  <meta name="description" content="Free Income Tax Calculator India. Compare New vs Old tax regime, calculate taxable income, tax payable & monthly TDS. Includes 87A rebate, standard deduction & all deductions.">
+  <meta name="keywords" content="income tax calculator india, new regime tax calculator, old regime vs new regime, 87a rebate calculator, income tax slab india, tds calculator india, tax on salary india">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fincalcmint.com/income-tax-calculator-india.html">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Income Tax Calculator India","url":"https://fincalcmint.com/income-tax-calculator-india.html","description":"Compare New vs Old tax regime for FY 2025-26 with deductions, 87A rebate and monthly TDS.","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which is better — New or Old tax regime for FY 2025-26?","acceptedAnswer":{"@type":"Answer","text":"The New Regime is better for most salaried employees with income below ₹7 lakh (zero tax due to 87A rebate) or those with few deductions. The Old Regime is beneficial if you have high deductions: ₹1.5L in 80C + ₹50K NPS + ₹2L home loan interest. As a rule of thumb, if total deductions exceed ₹3.75 lakh, the Old Regime saves more tax."}},{"@type":"Question","name":"What is the standard deduction in the New Regime for FY 2025-26?","acceptedAnswer":{"@type":"Answer","text":"The standard deduction under the New Tax Regime was increased from ₹50,000 to ₹75,000 in the Union Budget 2024. This means salaried employees get ₹75,000 automatically deducted from their gross salary before tax is calculated under the new regime."}},{"@type":"Question","name":"What is the income tax slab for FY 2025-26 under New Regime?","acceptedAnswer":{"@type":"Answer","text":"New Regime tax slabs FY 2025-26: ₹0–3L: Nil; ₹3L–7L: 5%; ₹7L–10L: 10%; ₹10L–12L: 15%; ₹12L–15L: 20%; Above ₹15L: 30%. Income up to ₹7L is tax-free under new regime due to Section 87A rebate. Plus 4% Health & Education cess on tax."}},{"@type":"Question","name":"What is the 87A tax rebate for FY 2025-26?","acceptedAnswer":{"@type":"Answer","text":"Under Section 87A: New Regime — full tax rebate if taxable income ≤ ₹7 lakh (rebate up to ₹25,000). Old Regime — full tax rebate if taxable income ≤ ₹5 lakh (rebate up to ₹12,500). This means zero income tax for most lower and middle-income salaried earners."}}]}</script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/layout.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/ads.css"><link rel="stylesheet" href="css/responsive.css">
+  <style>
+    .regime-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-4); margin-top: var(--space-4); }
+    @media (max-width: 640px) { .regime-grid { grid-template-columns: 1fr; } }
+    .regime-card { background: var(--bg-card); border: 2px solid var(--border-color); border-radius: var(--radius-xl); padding: var(--space-5); transition: border-color 0.3s; }
+    .regime-card.recommended { border-color: #10b981; box-shadow: 0 0 0 4px rgba(16,185,129,0.1); }
+    .regime-card-title { font-weight: 700; font-size: var(--font-size-lg); margin-bottom: var(--space-3); }
+    .regime-row { display: flex; justify-content: space-between; padding: var(--space-2) 0; border-bottom: 1px solid var(--border-color); font-size: var(--font-size-sm); }
+    .regime-row:last-child { border-bottom: none; font-weight: 700; font-size: var(--font-size-base); }
+    #tax-recommendation { margin: var(--space-4) 0; font-size: var(--font-size-sm); color: var(--text-secondary); }
+  </style>
+</head>
+<body data-theme="light">
+<div class="app-shell">
+  <div id="sidebar-overlay" class="sidebar-overlay" style="display:none;"></div>
+  <header class="top-bar">
+    <div class="top-bar-left"><button id="hamburger" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button><a href="index.html" class="logo"><div class="logo-icon">💹</div><span class="logo-text">Fin<span>Calc</span> Mint</span></a></div>
+    <div class="top-bar-right"><button id="theme-toggle" class="theme-toggle" style="position:relative;" aria-label="Toggle theme"><span class="icon-moon">🌙</span><span class="icon-sun">☀️</span></button></div>
+  </header>
+  <nav id="sidebar" class="sidebar"><div class="sidebar-label">All Calculators</div><ul id="sidebar-nav" class="nav-links"></ul></nav>
+  <div id="scroll-progress" class="scroll-progress"></div>
+
+  <main class="main-content">
+    <div class="content-inner">
+      <nav class="breadcrumb" style="margin-top:var(--space-5);"><a href="index.html">🏠 Home</a><span class="breadcrumb-sep">›</span><span>Income Tax Calculator</span></nav>
+      <div class="ad-unit ad-leaderboard"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+      <div class="page-with-rail">
+        <div class="page-main-content">
+          <section class="calculator-section" style="padding-top:var(--space-6);">
+            <div class="section-header reveal">
+              <div class="section-icon-wrap" style="background:rgba(249,115,22,0.1);">🧮</div>
+              <div>
+                <h1 class="section-title"><span style="background:linear-gradient(135deg,#f97316,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Income Tax</span> Calculator India</h1>
+                <p class="section-subtitle">Compare New vs Old tax regime, calculate your exact tax liability &amp; find out which regime saves you more money.</p>
+              </div>
+            </div>
+            <div class="calc-body reveal">
+              <div class="calculator-card">
+                <div class="calc-inputs">
+                  <div class="input-group">
+                    <label class="input-label">Annual Gross Income (CTC / Total Income)</label>
+                    <div class="input-row"><input type="number" id="tax-income" value="1200000" min="100000" max="50000000" step="10000"><span class="input-unit">₹</span></div>
+                    <div class="slider-wrap"><input type="range" id="tax-income-slider" min="100000" max="10000000" step="10000" value="1200000"></div>
+                    <div class="slider-labels"><span>₹1L</span><span>₹1 Cr</span></div>
+                  </div>
+                  <div style="font-weight:600;font-size:var(--font-size-sm);color:var(--text-secondary);margin:var(--space-3) 0 var(--space-2);">Deductions (for Old Regime only)</div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-3);">
+                    <div class="input-group"><label class="input-label">Section 80C <span class="input-label-hint">Max ₹1.5L</span></label><div class="input-row"><input type="number" id="tax-80c" value="150000" min="0" max="150000" step="5000"><span class="input-unit">₹</span></div></div>
+                    <div class="input-group"><label class="input-label">Section 80D <span class="input-label-hint">Max ₹25K</span></label><div class="input-row"><input type="number" id="tax-80d" value="25000" min="0" max="25000" step="1000"><span class="input-unit">₹</span></div></div>
+                    <div class="input-group"><label class="input-label">Home Loan Interest <span class="input-label-hint">Max ₹2L</span></label><div class="input-row"><input type="number" id="tax-homeloan" value="0" min="0" max="200000" step="5000"><span class="input-unit">₹</span></div></div>
+                    <div class="input-group"><label class="input-label">NPS 80CCD(1B) <span class="input-label-hint">Max ₹50K</span></label><div class="input-row"><input type="number" id="tax-nps" value="0" min="0" max="50000" step="1000"><span class="input-unit">₹</span></div></div>
+                  </div>
+                  <button id="tax-calculate" class="btn btn-calculate" style="background:linear-gradient(135deg,#f97316,#ef4444);margin-top:var(--space-3);">🧮 Calculate Tax</button>
+                </div>
+              </div>
+
+              <div id="tax-results" class="calculator-card hidden">
+                <div class="calc-results" style="min-height:auto;">
+                  <div id="tax-recommendation"></div>
+
+                  <div class="regime-grid">
+                    <!-- New Regime -->
+                    <div id="tax-new-card" class="regime-card">
+                      <div class="regime-card-title" style="color:#f97316;">🆕 New Regime</div>
+                      <div style="font-size:var(--font-size-xs);color:var(--text-muted);margin-bottom:var(--space-3);">Std. deduction ₹75,000 · 87A rebate up to ₹7L</div>
+                      <div class="regime-row"><span>Taxable Income</span><span id="tax-new-taxable" style="font-weight:600;">₹0</span></div>
+                      <div class="regime-row"><span>Annual Tax</span><span id="tax-new-tax" style="font-weight:600;color:#ef4444;">₹0</span></div>
+                      <div class="regime-row"><span>Monthly TDS</span><span id="tax-new-monthly">₹0</span></div>
+                    </div>
+                    <!-- Old Regime -->
+                    <div id="tax-old-card" class="regime-card">
+                      <div class="regime-card-title" style="color:#6366f1;">📋 Old Regime</div>
+                      <div style="font-size:var(--font-size-xs);color:var(--text-muted);margin-bottom:var(--space-3);">Std. deduction ₹50,000 · 87A rebate up to ₹5L</div>
+                      <div class="regime-row"><span>Taxable Income</span><span id="tax-old-taxable" style="font-weight:600;">₹0</span></div>
+                      <div class="regime-row"><span>Annual Tax</span><span id="tax-old-tax" style="font-weight:600;color:#ef4444;">₹0</span></div>
+                      <div class="regime-row"><span>Monthly TDS</span><span id="tax-old-monthly">₹0</span></div>
+                    </div>
+                  </div>
+
+                  <div style="margin-top:var(--space-5);">
+                    <div class="chart-title">New vs Old Regime — Visual Breakdown</div>
+                    <div class="chart-container" style="height:260px;"><canvas id="tax-chart"></canvas></div>
+                  </div>
+
+                  <div class="ad-unit ad-in-results" style="min-height:200px;"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-4);margin-top:var(--space-5);">
+                    <div>
+                      <div style="font-weight:700;font-size:var(--font-size-sm);margin-bottom:var(--space-3);color:#f97316;">New Regime — Slab Breakdown</div>
+                      <div id="tax-new-slabs"></div>
+                    </div>
+                    <div>
+                      <div style="font-weight:700;font-size:var(--font-size-sm);margin-bottom:var(--space-3);color:#6366f1;">Old Regime — Slab Breakdown</div>
+                      <div id="tax-old-slabs"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="ad-unit ad-mid-content"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+          <section class="seo-section reveal">
+            <h2>Income Tax Slabs</h2>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--space-5);">
+              <div>
+                <h3 style="color:#f97316;margin-bottom:var(--space-3);">🆕 New Regime</h3>
+                <div style="overflow-x:auto;"><table style="font-size:var(--font-size-sm);"><thead><tr><th>Income Slab</th><th>Rate</th></tr></thead><tbody>
+                  <tr><td>Up to ₹3,00,000</td><td>Nil</td></tr>
+                  <tr><td>₹3L – ₹7L</td><td>5%</td></tr>
+                  <tr><td>₹7L – ₹10L</td><td>10%</td></tr>
+                  <tr><td>₹10L – ₹12L</td><td>15%</td></tr>
+                  <tr><td>₹12L – ₹15L</td><td>20%</td></tr>
+                  <tr><td>Above ₹15L</td><td>30%</td></tr>
+                </tbody></table></div>
+                <p style="font-size:var(--font-size-xs);color:var(--text-muted);margin-top:var(--space-2);">Standard deduction: ₹75,000 | 87A rebate up to ₹7L taxable</p>
+              </div>
+              <div>
+                <h3 style="color:#6366f1;margin-bottom:var(--space-3);">📋 Old Regime</h3>
+                <div style="overflow-x:auto;"><table style="font-size:var(--font-size-sm);"><thead><tr><th>Income Slab</th><th>Rate</th></tr></thead><tbody>
+                  <tr><td>Up to ₹2,50,000</td><td>Nil</td></tr>
+                  <tr><td>₹2.5L – ₹5L</td><td>5%</td></tr>
+                  <tr><td>₹5L – ₹10L</td><td>20%</td></tr>
+                  <tr><td>Above ₹10L</td><td>30%</td></tr>
+                </tbody></table></div>
+                <p style="font-size:var(--font-size-xs);color:var(--text-muted);margin-top:var(--space-2);">Standard deduction: ₹50,000 | 87A rebate up to ₹5L taxable | HRA, LTA, 80C, 80D allowed</p>
+              </div>
+            </div>
+            <div class="info-box" style="margin-top:var(--space-4);"><span class="info-box-icon">ℹ️</span><span>All tax amounts above are subject to <strong>4% Health &amp; Education Cess</strong> on the calculated tax.</span></div>
+
+            <h3 style="margin-top:var(--space-5);">When is Old Regime Better?</h3>
+            <p>The Old Regime saves more tax if your <strong>total deductions exceed the break-even point</strong>. Here's a quick reference:</p>
+            <div style="overflow-x:auto;"><table style="font-size:var(--font-size-sm);"><thead><tr><th>Annual Income</th><th>Break-even Deduction</th><th>Typical Recommendation</th></tr></thead><tbody>
+              <tr><td>Up to ₹7 Lakh</td><td>Any amount</td><td>New Regime (zero tax)</td></tr>
+              <tr><td>₹7L – ₹10L</td><td>~₹2.5 Lakh</td><td>New if deductions &lt; ₹2.5L</td></tr>
+              <tr><td>₹10L – ₹15L</td><td>~₹3.25 Lakh</td><td>Compare both</td></tr>
+              <tr><td>Above ₹15L</td><td>~₹3.75 Lakh</td><td>Old if deductions &gt; ₹3.75L</td></tr>
+            </tbody></table></div>
+          </section>
+
+          <div class="ad-unit ad-in-content"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="7777777777" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+          <section class="seo-section reveal">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item"><button class="faq-question">Which is better — New or Old tax regime for FY 2025-26?</button><div class="faq-answer">The New Regime is typically better if your income is below ₹7L (zero tax) or if you have very few deductions. The Old Regime wins when total deductions (80C + 80D + HRA + home loan interest + NPS) exceed approximately ₹3.75 lakh for incomes above ₹15L. Use our calculator above to see which regime gives you a lower tax for your specific situation.</div></div>
+              <div class="faq-item"><button class="faq-question">What is the new income tax slab for FY 2025-26?</button><div class="faq-answer">Under the New Regime for FY 2025-26: ₹0–3L (0%), ₹3L–7L (5%), ₹7L–10L (10%), ₹10L–12L (15%), ₹12L–15L (20%), above ₹15L (30%). The standard deduction is ₹75,000. Income up to ₹7L is effectively tax-free due to the Section 87A rebate. Add 4% cess on the final tax amount.</div></div>
+              <div class="faq-item"><button class="faq-question">What deductions are allowed under the New Regime?</button><div class="faq-answer">The New Regime allows very few deductions: Standard Deduction (₹75,000), Employer's NPS contribution (80CCD(2)), interest on home loan for let-out property (not self-occupied), and a few others. The New Regime does NOT allow 80C, 80D, HRA exemption, LTA, or home loan interest on self-occupied property.</div></div>
+              <div class="faq-item"><button class="faq-question">Can I switch between New and Old regime every year?</button><div class="faq-answer">Salaried employees (no business income) can switch between Old and New regime every financial year. Simply inform your employer at the start of the year for TDS purposes, or choose at ITR filing time. If you have business income, you can switch to old regime only once. After that you're locked in unless you stop the business.</div></div>
+              <div class="faq-item"><button class="faq-question">Is there surcharge on income tax in India?</button><div class="faq-answer">Yes. Surcharge applies on high incomes: 10% surcharge for income ₹50L–₹1Cr; 15% for ₹1Cr–₹2Cr; 25% for ₹2Cr–₹5Cr; 37% for above ₹5Cr (only under Old Regime — New Regime caps surcharge at 25%). This calculator covers typical salaried income without surcharge. Marginal relief applies near slab boundaries.</div></div>
+            </div>
+          </section>
+
+          <div class="ad-unit ad-below-fold"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="8888888888" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+          <section class="seo-section reveal"><h2>Related Calculators</h2><div class="related-calcs"><a class="related-calc-link" href="salary-calculator.html">💼 Salary Calculator</a><a class="related-calc-link" href="home-loan-emi-calculator.html">🏦 Home Loan EMI</a><a class="related-calc-link" href="sip-calculator.html">📈 SIP Calculator</a><a class="related-calc-link" href="inflation-calculator.html">📊 Inflation Calc</a></div></section>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"><div class="footer-inner"><nav class="footer-links"><a href="index.html">🏠 Home</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="disclaimer.html">Disclaimer</a></nav><div class="footer-bottom"><p class="footer-disclaimer">⚠️ Tax calculations are based on FY 2025-26 rates and are indicative. Surcharge, marginal relief, and special rate incomes are not included. Consult a CA for personal tax advice.</p><span class="footer-copy">© FinCalc Mint · <a href="index.html">All Calculators</a></span></div></div></footer>
+  </main>
+  <div class="ad-unit ad-mobile-anchor"><ins class="adsbygoogle" style="display:inline-block;width:320px;height:50px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4444444444"></ins></div>
+</div>
+<script src="js/utils/formatters.js"></script><script src="js/utils/dom.js"></script><script src="js/charts/chartManager.js"></script><script src="js/calculators/incometax.js"></script><script src="js/page-init.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() { FinCalc.IncomeTax.init(); try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){} });</script>
+</body>
+</html>

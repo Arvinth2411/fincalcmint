@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salary Calculator India | CTC to Take Home Pay | In-Hand Salary | FinCalc Mint</title>
+  <meta name="description" content="Free Salary Calculator India. Calculate net take-home salary from CTC. Includes PF, professional tax, TDS, HRA. Supports new & old tax regime. Instant monthly salary breakdown.">
+  <meta name="keywords" content="salary calculator india, take home salary calculator, ctc to in hand salary calculator, net salary calculator india, monthly salary calculator, salary after tax india, in hand salary calculator">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://fincalcmint.com/salary-calculator.html">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Salary Calculator India","url":"https://fincalcmint.com/salary-calculator.html","description":"Calculate net take-home salary from CTC with PF, TDS and professional tax deductions.","applicationCategory":"FinanceApplication","offers":{"@type":"Offer","price":"0","priceCurrency":"INR"}}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How is in-hand salary calculated from CTC in India?","acceptedAnswer":{"@type":"Answer","text":"In-hand salary = CTC - Employee PF (12% of basic) - Professional Tax (₹200/month) - TDS (income tax / 12). Typically: Basic = 40% of CTC, HRA = 50% of basic (metro) or 40% (non-metro), Special Allowance = remainder."}},{"@type":"Question","name":"What percentage of CTC is take-home salary?","acceptedAnswer":{"@type":"Answer","text":"For most salaried employees in India, take-home is 75–85% of CTC. The gap includes employer PF, gratuity provision, and employee-side deductions like PF, professional tax and TDS."}},{"@type":"Question","name":"What is the difference between CTC and gross salary?","acceptedAnswer":{"@type":"Answer","text":"CTC (Cost to Company) includes employer contributions like employer PF (12% of basic) and gratuity (4.81% of basic). Gross salary is what the company pays directly to the employee before employee-side deductions. In-hand (net) salary = Gross salary - Employee PF - Professional Tax - TDS."}}]}</script>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <link rel="stylesheet" href="css/variables.css"><link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/layout.css"><link rel="stylesheet" href="css/components.css"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/ads.css"><link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-theme="light">
+<div class="app-shell">
+  <div id="sidebar-overlay" class="sidebar-overlay" style="display:none;"></div>
+  <header class="top-bar">
+    <div class="top-bar-left"><button id="hamburger" class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button><a href="index.html" class="logo"><div class="logo-icon">💹</div><span class="logo-text">Fin<span>Calc</span> Mint</span></a></div>
+    <div class="top-bar-right"><button id="theme-toggle" class="theme-toggle" style="position:relative;" aria-label="Toggle theme"><span class="icon-moon">🌙</span><span class="icon-sun">☀️</span></button></div>
+  </header>
+  <nav id="sidebar" class="sidebar"><div class="sidebar-label">All Calculators</div><ul id="sidebar-nav" class="nav-links"></ul></nav>
+  <div id="scroll-progress" class="scroll-progress"></div>
+
+  <main class="main-content">
+    <div class="content-inner">
+      <nav class="breadcrumb" style="margin-top:var(--space-5);"><a href="index.html">🏠 Home</a><span class="breadcrumb-sep">›</span><span>Salary Calculator</span></nav>
+      <div class="ad-unit ad-leaderboard"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+      <div class="page-with-rail">
+        <div class="page-main-content">
+          <section class="calculator-section" style="padding-top:var(--space-6);">
+            <div class="section-header reveal">
+              <div class="section-icon-wrap" style="background:rgba(139,92,246,0.1);">💼</div>
+              <div>
+                <h1 class="section-title"><span style="background:linear-gradient(135deg,#8b5cf6,#ec4899);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Salary</span> Take-Home Calculator</h1>
+                <p class="section-subtitle">Calculate your exact monthly take-home salary from CTC. Includes PF, professional tax, TDS &amp; HRA deductions.</p>
+              </div>
+            </div>
+            <div class="calc-body reveal">
+              <div class="calculator-card">
+                <div class="calc-inputs">
+                  <div class="input-group">
+                    <label class="input-label">Annual CTC <span class="input-label-hint">₹3L – ₹1Cr</span></label>
+                    <div class="input-row"><input type="number" id="sal-ctc" value="1200000" min="300000" max="10000000" step="50000"><span class="input-unit">₹/yr</span></div>
+                    <div class="slider-wrap"><input type="range" id="sal-ctc-slider" min="300000" max="10000000" step="50000" value="1200000"></div>
+                    <div class="slider-labels"><span>₹3L</span><span>₹1Cr</span></div>
+                  </div>
+                  <div class="input-group">
+                    <label class="input-label">Tax Regime</label>
+                    <div class="select-wrap"><select id="sal-regime" class="form-select"><option value="new" selected>New Regime (Default)</option><option value="old">Old Regime</option></select></div>
+                  </div>
+                  <div class="toggle-group">
+                    <label class="toggle-switch"><input type="checkbox" id="sal-metro" checked><span class="toggle-slider"></span></label>
+                    <span class="toggle-label">Metro City (Higher HRA)</span>
+                  </div>
+                  <div id="sal-old-deductions" class="hidden" style="display:flex;flex-direction:column;gap:var(--space-3);padding:var(--space-4);background:var(--bg-body);border-radius:var(--radius-lg);border:1px solid var(--border-color);">
+                    <div style="font-size:var(--font-size-xs);font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.05em;">Old Regime Deductions</div>
+                    <div class="input-group"><label class="input-label">80C <span class="input-label-hint">max ₹1.5L</span></label><div class="input-row"><input type="number" id="sal-80c" value="150000" min="0" max="150000" step="5000"><span class="input-unit">₹</span></div></div>
+                    <div class="input-group"><label class="input-label">80D Medical <span class="input-label-hint">max ₹25K</span></label><div class="input-row"><input type="number" id="sal-80d" value="0" min="0" max="25000" step="1000"><span class="input-unit">₹</span></div></div>
+                    <div class="input-group"><label class="input-label">Home Loan Interest <span class="input-label-hint">max ₹2L</span></label><div class="input-row"><input type="number" id="sal-homeloan" value="0" min="0" max="200000" step="5000"><span class="input-unit">₹</span></div></div>
+                  </div>
+                  <button id="sal-calculate" class="btn btn-calculate" style="background:linear-gradient(135deg,#8b5cf6,#ec4899);">Calculate Take-Home</button>
+                </div>
+              </div>
+              <div id="sal-results" class="calculator-card hidden">
+                <div class="calc-results">
+                  <div class="result-cards">
+                    <div class="result-card primary" style="background:linear-gradient(135deg,#8b5cf6,#ec4899);border:none;"><div class="result-label">Monthly Take-Home</div><div id="sal-net" class="result-value large">₹0</div></div>
+                    <div class="result-card" style="--card-accent:#8b5cf6;"><div class="result-label">Monthly Gross</div><div id="sal-gross" class="result-value">₹0</div></div>
+                    <div class="result-card" style="--card-accent:#ec4899;"><div class="result-label">Monthly TDS</div><div id="sal-tds" class="result-value">₹0</div></div>
+                    <div class="result-card" style="--card-accent:#c4b5fd;"><div class="result-label">Annual Tax</div><div id="sal-annual-tax" class="result-value">₹0</div></div>
+                  </div>
+                  <div><div class="chart-title">Monthly Salary Split</div><div class="chart-container" style="max-width:280px;margin:0 auto;"><canvas id="sal-chart"></canvas></div></div>
+                  <div class="ad-unit ad-in-results"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="5555555555" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+                  <div class="amortization-section"><div class="amortization-title">Monthly Breakdown</div><div id="sal-breakdown" class="breakdown-table"></div></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="ad-unit ad-mid-content"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="6666666666" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+          <section class="seo-section reveal">
+            <h2>CTC vs Gross Salary vs In-Hand Salary — Explained</h2>
+            <p>Many employees are confused about the difference between CTC, gross salary and take-home. Here's a clear breakdown:</p>
+            <div style="overflow-x:auto;"><table style="font-size:var(--font-size-sm);"><thead><tr><th>Component</th><th>% of CTC (approx)</th><th>Taxable?</th></tr></thead><tbody>
+              <tr><td>Basic Salary</td><td>40–50%</td><td>Yes (fully)</td></tr>
+              <tr><td>HRA</td><td>40–50% of Basic</td><td>Partially (old regime)</td></tr>
+              <tr><td>Special Allowance</td><td>Remaining</td><td>Yes (fully)</td></tr>
+              <tr><td>Employee PF (deduction)</td><td>12% of Basic</td><td>No (80C exempt)</td></tr>
+              <tr><td>Employer PF (not in gross)</td><td>12% of Basic</td><td>No</td></tr>
+              <tr><td>Gratuity provision</td><td>4.81% of Basic</td><td>No (on maturity)</td></tr>
+              <tr><td>Professional Tax</td><td>₹200/month</td><td>Deductible</td></tr>
+            </tbody></table></div>
+            <h3 style="margin-top:var(--space-5);">In-Hand Salary Examples (New Regime)</h3>
+            <div style="overflow-x:auto;"><table style="font-size:var(--font-size-sm);"><thead><tr><th>Annual CTC</th><th>Monthly Gross</th><th>Monthly TDS</th><th>Monthly Take-Home</th></tr></thead><tbody>
+              <tr><td>₹6,00,000</td><td>₹42,857</td><td>₹0</td><td>~₹37,857</td></tr>
+              <tr><td>₹10,00,000</td><td>₹71,429</td><td>~₹1,400</td><td>~₹63,000</td></tr>
+              <tr><td>₹15,00,000</td><td>₹1,07,143</td><td>~₹6,800</td><td>~₹92,000</td></tr>
+              <tr><td>₹25,00,000</td><td>₹1,78,571</td><td>~₹24,000</td><td>~₹1,43,000</td></tr>
+            </tbody></table></div>
+          </section>
+
+          <div class="ad-unit ad-in-content"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="7777777777" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+          <section class="seo-section reveal">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-list">
+              <div class="faq-item"><button class="faq-question">How is in-hand salary calculated from CTC?</button><div class="faq-answer">In-hand salary = Gross Salary − Employee PF (12% of basic) − Professional Tax (₹200/month) − TDS (monthly income tax). Gross salary typically excludes employer PF and gratuity provisions. The gross-to-take-home ratio is usually 85–92% before tax.</div></div>
+              <div class="faq-item"><button class="faq-question">Which tax regime is better for salaried employees in 2025?</button><div class="faq-answer">For most salaried employees with CTC under ₹15 lakh and fewer deductions, the New Regime is better due to lower slabs and ₹75,000 standard deduction. If you have a home loan interest deduction above ₹2 lakh, significant 80C investments, and HRA exemption, the Old Regime may save more tax.</div></div>
+              <div class="faq-item"><button class="faq-question">Is PF mandatory for all salaried employees?</button><div class="faq-answer">PF (EPFO) is mandatory for employees earning a basic salary up to ₹15,000/month. Both employee and employer contribute 12% of basic salary. For basic salary above ₹15,000, PF contribution is calculated on a capped basic of ₹15,000 (i.e., ₹1,800/month). Employees can voluntarily contribute more via VPF.</div></div>
+              <div class="faq-item"><button class="faq-question">Can I claim HRA exemption under the new tax regime?</button><div class="faq-answer">No. HRA exemption is only available under the Old Tax Regime. Under the New Tax Regime, you cannot claim HRA exemption. However, the new regime offers a ₹75,000 standard deduction which partially compensates.</div></div>
+              <div class="faq-item"><button class="faq-question">What is the professional tax rate in India?</button><div class="faq-answer">Professional tax is a state-level tax. Most states charge ₹200/month (₹2,400/year) for employees earning above a threshold. States like Maharashtra, Karnataka, West Bengal, Tamil Nadu levy professional tax. Some states like Delhi, Haryana, and Rajasthan do not levy professional tax.</div></div>
+            </div>
+          </section>
+
+          <div class="ad-unit ad-below-fold"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="8888888888" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
+
+          <section class="seo-section reveal"><h2>Related Calculators</h2><div class="related-calcs"><a class="related-calc-link" href="income-tax-calculator-india.html">🧮 Income Tax</a><a class="related-calc-link" href="gst-calculator.html">🧾 GST Calculator</a><a class="related-calc-link" href="home-loan-emi-calculator.html">🏦 Home Loan EMI</a><a class="related-calc-link" href="sip-calculator.html">📈 SIP Calculator</a></div></section>
+        </div>
+      </div>
+    </div>
+    <footer class="footer"><div class="footer-inner"><nav class="footer-links"><a href="index.html">🏠 Home</a><a href="about.html">About Us</a><a href="contact.html">Contact Us</a><a href="privacy-policy.html">Privacy Policy</a><a href="terms-and-conditions.html">Terms &amp; Conditions</a><a href="disclaimer.html">Disclaimer</a></nav><div class="footer-bottom"><p class="footer-disclaimer">⚠️ Salary calculations are indicative. Actual take-home may vary based on employer salary structure, exact tax slabs, and applicable exemptions. Consult your HR or a tax advisor.</p><span class="footer-copy">© FinCalc Mint · <a href="index.html">All Calculators</a></span></div></div></footer>
+  </main>
+  <div class="ad-unit ad-mobile-anchor"><ins class="adsbygoogle" style="display:inline-block;width:320px;height:50px" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="4444444444"></ins></div>
+</div>
+<script src="js/utils/formatters.js"></script><script src="js/utils/dom.js"></script><script src="js/charts/chartManager.js"></script><script src="js/calculators/salary.js"></script><script src="js/page-init.js"></script>
+<script>document.addEventListener('DOMContentLoaded', function() { FinCalc.Salary.init(); try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){} });</script>
+</body>
+</html>
