@@ -48,13 +48,12 @@
     <div class="content-inner" style="max-width:860px;">
       <nav class="breadcrumb" style="margin-top:var(--space-5);"><a href="index.html">🏠 Home</a><span class="breadcrumb-sep">›</span><span>Contact Us</span></nav>
 
-      <div class="ad-unit ad-leaderboard"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
 
       <section class="seo-section reveal" style="margin-top:var(--space-6);">
         <h1 style="font-size:var(--font-size-3xl);font-weight:800;margin-bottom:var(--space-2);">Contact <span style="background:linear-gradient(135deg,#6366f1,#06b6d4);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Us</span></h1>
         <p style="color:var(--text-secondary);margin-bottom:var(--space-6);">Have a question, found a bug, or want to suggest a new calculator? We'd love to hear from you.</p>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--space-4);margin-bottom:var(--space-6);">
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:var(--space-4);margin-bottom:var(--space-6);">
           <div class="contact-info-card">
             <div class="contact-info-icon">📧</div>
             <div>
@@ -79,7 +78,7 @@
           </div>
         </div>
 
-        <div class="calculator-card" style="max-width:600px;">
+        <div class="calculator-card">
           <h2 style="margin-bottom:var(--space-2);">Send Us a Message</h2>
           <p style="font-size:var(--font-size-sm);color:var(--text-muted);margin-bottom:0;">Fill in the form below and we'll get back to you shortly.</p>
           <form class="contact-form" id="contact-form" onsubmit="handleSubmit(event)">
@@ -119,7 +118,6 @@
         </div>
       </section>
 
-      <div class="ad-unit ad-below-fold"><ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="8888888888" data-ad-format="auto" data-full-width-responsive="true" data-ad-lazy="true"></ins></div>
     </div>
 
     <footer class="footer">
@@ -152,7 +150,6 @@ function handleSubmit(e) {
     document.getElementById('success-msg').style.display = 'block';
   }, 800);
 }
-document.addEventListener('DOMContentLoaded',function(){try{(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}});
 </script>
 </body>
 </html>

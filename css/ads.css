@@ -156,9 +156,6 @@
 
 @media (max-width: 767px) {
   .ad-mobile-anchor { display: flex; }
-  /* Add bottom padding so anchor doesn't cover content */
-  .main-content { padding-bottom: 70px; }
-  .footer { margin-bottom: 60px; }
 }
 
 /* ============================================
