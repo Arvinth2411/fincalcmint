@@ -150,6 +150,30 @@
 }
 
 /* ============================================
+   MOBILE PRIMARY NAV (<768px)
+   Show Home/About/Guide/Glossary/Contact as a
+   compact, horizontally-scrollable strip.
+   ============================================ */
+@media (max-width: 767px) {
+  .top-nav {
+    display: flex;
+    flex: 1 1 auto;
+    min-width: 0;
+    margin: 0 var(--space-1);
+    gap: 2px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .top-nav::-webkit-scrollbar { display: none; }
+  .top-nav a {
+    padding: var(--space-1) var(--space-2);
+    font-size: var(--font-size-xs);
+    white-space: nowrap;
+  }
+}
+
+/* ============================================
    SMALL MOBILE (<480px)
    ============================================ */
 @media (max-width: 479px) {
@@ -212,9 +236,10 @@
 
   .calculator-section { padding: var(--space-8) 0; }
 
-  .top-bar { padding: 0 var(--space-4); }
+  .top-bar { padding: 0 var(--space-3); }
 
-  .logo-text { font-size: var(--font-size-base); }
+  /* Hide wordmark on tiny screens so the nav buttons fit (icon still links home) */
+  .logo-text { display: none; }
 
   .rate-pills { gap: var(--space-1); }
   .rate-pill { padding: 6px 12px; font-size: 0.75rem; }
