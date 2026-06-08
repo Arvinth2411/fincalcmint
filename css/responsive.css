@@ -32,6 +32,9 @@
   .desktop-only { display: flex; }
   .mobile-only  { display: none; }
 
+  /* Show primary header navigation */
+  .top-nav { display: flex; }
+
   .hero-title { font-size: var(--font-size-5xl); }
 
   .feature-grid {
